@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {connect} from 'react-redux'
 
 class MainView extends Component {
   render = () => {
@@ -57,4 +58,10 @@ class MainView extends Component {
   }
 }
 
-export default MainView
+function mapStateToProps(state) {
+  return {
+    todos: state.todos
+  }
+}
+
+export default connect(mapStateToProps)(MainView)
